@@ -72,16 +72,16 @@ class NeuralNet(object):
         if test_data:
             n_test = len(test_data)
 
-		n = len(training_data)
-		for j in range(epochs):
-			random.shuffle(training_data)
-			mini_batches = [training_data[k:k+mini_batch_size] for k in range(0, n, mini_batch_size)]
-			for mini_batch in mini_batches:
-				self.update_mini_batch(mini_batch, eta)
-			if test_data:
-				print("Epoch {0}: {1} / {2}".format(j, self.evaluate(test_data), n_test))
-			else:
-				print("Epoch {0} complete".format(j))
+        n = len(training_data)
+        for j in range(epochs):
+        	random.shuffle(training_data)
+        	mini_batches = [training_data[k:k+mini_batch_size] for k in range(0, n, mini_batch_size)]
+        	for mini_batch in mini_batches:
+        		self.update_mini_batch(mini_batch, eta)
+        	if test_data:
+        		print("Epoch {0}: {1} / {2}".format(j, self.evaluate(test_data), n_test))
+        	else:
+        		print("Epoch {0} complete".format(j))
 
     def evaluate(self, test_data):
         test_results = [(np.argmax(self.feedforward(x)), y) for (x, y) in test_data]
@@ -135,7 +135,8 @@ def load_mnist(dataset="training_data", digits=np.arange(10), path="."):
  
 def load_samples(dataset="training_data"):
  
-    image,label = load_mnist(dataset, path='MNIST_data/')
+    # 替换数据路径
+    image,label = load_mnist(dataset, path='/Users/jiahuan.yang/data/MNIST_data/')
  
     X = [np.reshape(x,(28*28, 1)) for x in image]
     X = [x/255.0 for x in X]   # 灰度值范围(0-255)，转换为(0-1)
