@@ -4,8 +4,8 @@ This is an algorithm collection for machine learning implemented without any ML 
 ## TODO
 
 - [ ] Supervised learning
-  - [ ] Linear regression
-  - [ ] Logistic regression
+  - [x] Linear regression
+  - [x] Logistic regression
   - [ ] Support vector machine (SVM)
   - [ ] K-nearest neighbour (KNN)
   - [ ] Decision  tree

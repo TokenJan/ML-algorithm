@@ -17,11 +17,11 @@ class LogisticRegression(object):
         x_test = load_test_data()
         x_test = np.insert(x_test, 2, 1, axis=0)
 
-        for i in range(self.n_iterations):
+        for _ in range(self.n_iterations):
             # evaluate model every iteration    
             y_predict = self.predict(x_test)
             plt.scatter(x_test[0], x_test[1], c=y_predict)
-            plt.savefig("/Users/jiahuan.yang/Desktop/predict_" + str(i) + ".png")
+            plt.show()
 
             # train the model
             h_x = x.T.dot(self.w)
