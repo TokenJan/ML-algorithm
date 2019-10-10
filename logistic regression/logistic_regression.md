@@ -23,21 +23,31 @@ logistic regression 中不再沿用 linear regression 中的最小二乘作为�
 
 由于每个样本都是独立的，所以该样本集的联合概率分布为：
 
+<div  align="center"> 
 <img src="https://latex.codecogs.com/gif.latex?\prod&space;_{i=1}^mp^{y_i}&space;\cdot&space;(1&space;-&space;p)^{1-y_i}" title="\prod _{i=1}^mp^{y_i} \cdot (1 - p)^{1-y_i}" />
+</div>
 
 将 <img src="https://latex.codecogs.com/gif.latex?p&space;=&space;\frac{1}{1&space;&plus;&space;e^{-\theta^T&space;\cdot&space;x&space;}}" title="p = \frac{1}{1 + e^{-\theta^T \cdot x }}" /> 代入上式，并用极大似然估计法求其最大值时的 <img src="https://latex.codecogs.com/gif.latex?\theta" title="\theta" /> 的值：
 
+<div  align="center"> 
 <img src="https://latex.codecogs.com/gif.latex?\prod&space;_{i=1}^m(\frac{1}{1&space;&plus;&space;e^{-\theta^T&space;\cdot&space;x&space;}})^{y_i}&space;\cdot&space;(\frac{e^{-\theta^T&space;\cdot&space;x&space;}}{1&space;&plus;&space;e^{-\theta^T&space;\cdot&space;x&space;}})^{1-y_i}" title="\prod _{i=1}^m(\frac{1}{1 + e^{-\theta^T \cdot x }})^{y_i} \cdot (\frac{e^{-\theta^T \cdot x }}{1 + e^{-\theta^T \cdot x }})^{1-y_i}" />
+</div>
 
 为了便于计算，取自然对数变成加和形式：
 
+<div  align="center"> 
 <img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{m}y_iln(\frac{1}{1&plus;e^{-\theta^T&space;\cdot&space;x}})&space;&plus;&space;(1-y_i)ln(\frac{e^{-\theta^T&space;\cdot&space;x}}{1&plus;e^{-\theta^T&space;\cdot&space;x}})" title="\sum _{i=0}^{m}y_iln(\frac{1}{1+e^{-\theta^T \cdot x}}) + (1-y_i)ln(\frac{e^{-\theta^T \cdot x}}{1+e^{-\theta^T \cdot x}})" />
+</div>
 
+<div  align="center"> 
 <img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{m}y_i(\theta^T&space;\cdot&space;x)&space;&plus;&space;ln(1&space;&plus;&space;e^{\theta^T&space;\cdot&space;x})" title="\sum _{i=0}^{m}y_i(\theta^T \cdot x) + ln(1 + e^{\theta^T \cdot x})" />
+</div>
 
 对 <img src="https://latex.codecogs.com/gif.latex?\theta" title="\theta" /> 求偏导得到梯度：
 
+<div  align="center"> 
 <img src="https://latex.codecogs.com/gif.latex?\sum&space;_{i=0}^{m}(y_i-\frac{1}{1&plus;e^{-\theta^T&space;\cdot&space;x}})x_i" title="\sum _{i=0}^{m}(y_i-\frac{1}{1+e^{-\theta^T \cdot x}})x_i" />
+</div>
 
 极大似然估计求概率最大时的参数值，因此是梯度上升的方向，取负号便是梯度下降的方向：
 
