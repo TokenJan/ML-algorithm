@@ -41,7 +41,9 @@ logistic regression 中不再沿用 linear regression 中的最小二乘作为�
 
 极大似然估计求概率最大时的参数值，因此是梯度上升的方向，取负号便是梯度下降的方向：
 
+<div  align="center"> 
 <img src="https://latex.codecogs.com/gif.latex?-\sum&space;_{i=0}^{m}(y_i-\frac{1}{1&plus;e^{-\theta^T&space;\cdot&space;x}})x_i" title="-\sum _{i=0}^{m}(y_i-\frac{1}{1+e^{-\theta^T \cdot x}})x_i" />
+</div> 
 
 ## 多分类
 
