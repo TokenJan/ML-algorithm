@@ -7,7 +7,7 @@ This is an algorithm collection for machine learning implemented without any ML 
   - [x] Linear regression
   - [x] Logistic regression
   - [ ] Support vector machine (SVM)
-  - [ ] K-nearest neighbour (KNN)
+  - [x] K-nearest neighbour (KNN)
   - [ ] Decision  tree
   - [ ] Random forest
   - [ ] AdaBoost

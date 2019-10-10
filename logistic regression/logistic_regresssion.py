@@ -1,6 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+TRAIN_SAMPLES = 500
+PREDICT_SAMPLES = 500
+
 class LogisticRegression(object):
     # 初始化逻辑回归模型参数
     def __init__(self, learning_rate=0.001, n_iterations=20):
@@ -37,15 +40,15 @@ class LogisticRegression(object):
 
 
 def load_train_data():
-    x1 = np.random.uniform(-2, 2, 500)
-    x2 = np.random.uniform(-2, 2, 500)
+    x1 = np.random.uniform(-2, 2, TRAIN_SAMPLES)
+    x2 = np.random.uniform(-2, 2, TRAIN_SAMPLES)
     x = np.array([x1, x2])
     y = [0 if x1_ - x2_ < 2  else 1 for x1_, x2_ in zip(x1, x2)]
     return x, y
 
 def load_test_data():
-    x1 = np.random.uniform(-2, 2, 500)
-    x2 = np.random.uniform(-2, 2, 500)
+    x1 = np.random.uniform(-2, 2, PREDICT_SAMPLES)
+    x2 = np.random.uniform(-2, 2, PREDICT_SAMPLES)
     x = np.array([x1, x2])
     return x
 
